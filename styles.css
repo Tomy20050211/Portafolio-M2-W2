@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --tarjetas: linear-gradient(1deg, rgb(161, 161, 161), rgb(0, 0, 0));
+    --fondo-pantalla: linear-gradient(30deg, rgb(116, 116, 116), black);
+    --cartas: rgba(0, 0, 0, 0.514);
+    --letras: azure;
+    --border: rgba(255, 255, 255, 0.507);
+    --header: rgba(0, 0, 0, 0.541);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: 
+    var(--fondo-pantalla);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--letras);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header{
+    background-color: var(--header);
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+a{
+    text-decoration: none;
+    color: var(--letras);
+}
+.tituloDiv{
+    text-align: center;
+    margin-top: 10rem;
+}
+.contenedor-yo{
+    margin: 0 auto 0 auto;
+    margin-top: 4rem;
+    height: 700px;
+    width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    text-align: center;
+}
+.tarjeta1{
+   grid-column: 1/4;
+   grid-row: 1/4;
+   border-radius: 1rem 10rem 1rem 10rem;
+    background: var(--cartas);
+    animation: aparecer-izquierda 4.5s ease infinite;
+}
+
+.tarjeta2{
+    grid-column: 3/6;
+    grid-row: 3/6;
+    border-radius: 2rem;
+    z-index: 1000;
+   background: 
+   linear-gradient(170deg, rgb(51, 51, 51), black);
+   padding: 2rem;
+   box-shadow: 0 2px 10px black;
+  
+}
+.tarjeta2 p{
+    margin-top: 3rem;
+}
+
+.tarjeta3{
+    grid-column: 5/8;
+    grid-row: 5/8;
+    border-radius: 10rem 1rem 10rem 1rem;
+     background: var(--cartas);
+      animation: aparecer-derecha 5s ease forwards infinite;
+}
+.contenedor-informacion{
+    margin: 5rem;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.contenedor-informacion div{
+     background: var(--cartas);
+     gap: 3rem;
+     margin: 0.5rem;
+     border: 2px solid var(--border);
+     text-align: center;
+    padding: 2rem;
+}
+.carta{
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.carta:hover{
+    transform: translateY(-10px);
+}
+
+
+.carta1{
+    grid-column: 1/3;
+    grid-row: 1/3; 
+}
+
+.carta6{
+    grid-column: 1/5;
+}
+
+
+@keyframes aparecer-izquierda {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+    filter: blur(8px);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-60px);
+    filter: blur(8px);
+  }
+}
+
+@keyframes aparecer-derecha {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+    filter: blur(8px);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(60px);
+    filter: blur(8px);
+  }
+}
